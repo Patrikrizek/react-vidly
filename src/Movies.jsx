@@ -6,10 +6,17 @@ class Movies extends Component {
         movies: getMovies()
     };
 
+    renderMovies() {
+        const countMovies = this.state.movies.length;
+        if (countMovies != 0) return 'Showing ' + countMovies + ' movies in the database.';
+
+        return 'There are no movies in database.';
+    }
+
     render() {
         return (
             <React.Fragment>
-                <p className='m-3'>Showing {this.state.movies.length} movies in the database.</p>
+                <p className='m-3'>{this.renderMovies()}</p>
                 <table className="table">
                     <thead>
                         <tr>
