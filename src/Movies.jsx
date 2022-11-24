@@ -21,13 +21,12 @@ class Movies extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-                            <td><button className='btn btn-danger m-2'>Delete</button></td>
-                        </tr>
+                        {this.state.movies.map(movie => <tr key={movie._id}>
+                            <td>{movie.title}</td>
+                            <td>{movie.genre.name}</td>
+                            <td>{movie.numberInStock}</td>
+                            <td>{movie.dailyRentalRate}</td>
+                        </tr>)}
                     </tbody>
                 </table>
             </React.Fragment>
