@@ -13,6 +13,12 @@ class Movies extends Component {
         return 'There are no movies in database.';
     }
 
+    handleMovieRemove = movie => {
+        this.setState({
+            movies: this.state.movies.filter(m => m._id !== movie._id)
+        });
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -33,6 +39,14 @@ class Movies extends Component {
                             <td>{movie.genre.name}</td>
                             <td>{movie.numberInStock}</td>
                             <td>{movie.dailyRentalRate}</td>
+                            <td>
+                                <button
+                                    className='btn btn-danger'
+                                    onClick={() => this.handleMovieRemove(movie)}
+                                >
+                                    Delete
+                                </button>
+                            </td>
                         </tr>)}
                     </tbody>
                 </table>
