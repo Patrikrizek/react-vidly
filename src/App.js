@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
+import Movies from './Movies';
 
 function App() {
   return (
-    <React.Fragment>
-      <main className='container'>
-        <h1>Hello World!</h1>
-      </main>
-    </React.Fragment>
+    <main className='container'>
+      <Movies />
+    </main>
   );
 }
 
