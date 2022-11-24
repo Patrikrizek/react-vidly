@@ -9,7 +9,7 @@ class Movies extends Component {
     render() {
         return (
             <React.Fragment>
-                <p className='m-3'>Showing 9 movies in the database.</p>
+                <p className='m-3'>Showing {this.state.movies.length} movies in the database.</p>
                 <table className="table">
                     <thead>
                         <tr>
